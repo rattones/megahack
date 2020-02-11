@@ -1,11 +1,11 @@
 <?php
 namespace core\system;
 
-use core\db\Connection;
+use core\db\PDOConnection;
 use PDOException;
 use PDOStatement;
 
-class Model extends Connection
+class Model extends PDOConnection
 {
     public $db;
 
