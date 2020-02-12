@@ -1,2 +1,3 @@
 frontweb/package-lock.json
 frontweb/node_modules/*
+data/*.txt
