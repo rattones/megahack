@@ -12,10 +12,10 @@ class ApiAuth
     public function auth() : bool
     {
         try {
-            if ( !isset($_SERVER['HTTP_AUTHORIZATION']) ) {
-                return false;
-                // return true; # testing in browser
-            }
+                // if ( !isset($_SERVER['HTTP_AUTHORIZATION']) ) {
+                //     return false;
+                //     // return true; # testing in browser
+                // }
             $arr= explode(' ', $_SERVER['HTTP_AUTHORIZATION']);
             self::$timestamp= $arr[0];
             self::$token= $arr[1];
@@ -26,9 +26,9 @@ class ApiAuth
             \debug($e);
         }
         // \debug([self::$token, self::$timestamp, self::$webjump]);
-        return ( !is_null(self::$token) and
-                 !is_null(self::$timestamp) and
-                 !is_null(self::$passToken) );
-        // return true; # testing in browser
+        // return ( !is_null(self::$token) and
+        //          !is_null(self::$timestamp) and
+        //          !is_null(self::$passToken) );
+        return true; # testing in browser
     }
 }

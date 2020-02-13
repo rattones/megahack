@@ -4,6 +4,7 @@ namespace app\controller;
 use core\system\Controller;
 use stdClass;
 
+
 class Test extends Controller
 {
     public function __construct()
@@ -16,6 +17,8 @@ class Test extends Controller
         $obj= new stdClass();
         $obj->message= 'Ok, controler Teste e método Method executados';
 
-        self::response(200, (object)$_SERVER);
+        $tw= \curl();
+
+        self::response(200, (array)$tw);
     }
 }

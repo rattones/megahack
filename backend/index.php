@@ -1,7 +1,8 @@
 <?php
-require_once('__autoload.php');
+require_once '__autoload.php';
+require_once './core/library/TwitterApi.php';
 
-use core\db\Connection;
+use core\db\PDOConnection;
 use core\system\ApiAuth;
 use core\system\Controller;
 use core\system\Router;
@@ -14,7 +15,7 @@ class App
     {
         require_once('app/config.php');
         $this->routes= $routes;
-        $this->db= new Connection();
+        $this->db= new PDOConnection();
     }
 
     public function run() 

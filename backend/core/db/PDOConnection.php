@@ -1,8 +1,8 @@
 <?php
 namespace core\db;
 
-use Exception;
 use PDO;
+use PDOException;
 
 class PDOConnection 
 {
@@ -18,8 +18,8 @@ class PDOConnection
         $passwd= null;
 
         try {
-            $this->conn= new \PDO($dns, $username, $passwd);
-        } catch (Exception $e) {
+            $this->conn= new PDO($dns, $username, $passwd);
+        } catch (PDOException $e) {
             \debug($e);
         }
     }
