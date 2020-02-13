@@ -1,6 +1,7 @@
 <?php
 require_once '__autoload.php';
-require_once './core/library/TwitterApi.php';
+
+define('APP_PATH', __DIR__);
 
 use core\db\PDOConnection;
 use core\system\ApiAuth;

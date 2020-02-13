@@ -11,6 +11,7 @@ class ApiAuth
 
     public function auth() : bool
     {
+        return true; # testing in browser
         try {
                 // if ( !isset($_SERVER['HTTP_AUTHORIZATION']) ) {
                 //     return false;
@@ -29,6 +30,5 @@ class ApiAuth
         // return ( !is_null(self::$token) and
         //          !is_null(self::$timestamp) and
         //          !is_null(self::$passToken) );
-        return true; # testing in browser
     }
 }
