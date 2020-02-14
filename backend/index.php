@@ -22,7 +22,7 @@ class App
     public function run() 
     {
         if ( ApiAuth::auth() ) {
-            $router= new Router($this->routes);
+            Router::init($this->routes);
         } else {
             Controller::response(401);
         }

@@ -5,44 +5,57 @@ use core\system\Controller;
 
 class Router 
 {
-    private $method;
-    private $uri;
-    private $params= [];
+    private static $method;
+    private static $uri;
+    private static $params= [];
 
-    public function __construct(array $routes)
+    public static function init(array $routes)
     {
-        $this->uri= explode('/', substr($_SERVER['REQUEST_URI'], 1));
-        $this->method= strtolower($_SERVER['REQUEST_METHOD']);
+        self::$uri= explode('/', substr($_SERVER['REQUEST_URI'], 1));
+        self::$method= strtolower($_SERVER['REQUEST_METHOD']);
         
-        $this->findRoute($routes);
+        $action= self::findRoute($routes);
+        if (empty($action)) {
+            Controller::response(405);
+        } else {
+            self::executeRoute($action);
+        }
         
     }
     
-    private function findRoute(array $routes)
+    private static function findRoute(array $routes) : string
     {
-        foreach ( $routes[$this->method] as $route=>$action ) {
+        foreach ( $routes[self::$method] as $route=>$action ) {
             $route= explode('/', $route);
 
-            if ( $route[0] === $this->uri[0] and count($route) === count($this->uri) ) {
+            if ( $route[0] === self::$uri[0] and count($route) === count(self::$uri) ) {
                 
-                $this->params= [];
+                self::$params= [];
                 for ( $i=0; $i<count($route); $i++ ) {
-                    $item= $route[$i];
-                    $param= $this->uri[$i];
-
-                    if ( substr($item, 0, 1) === ':' ) {
-                        $this->params[]= $param;
+                    if ($route[$i] === self::$uri[$i]) {
+                        // do nothing, just verifying route steps
+                    } elseif ( substr($route[$i], 0, 1) === ':' ) {
+                        self::$params[]= self::$uri[$i];
+                    } else {
+                        return "";
                     }
                 }
                 break;
+            } else {
+                $action= "";
             }
         }
 
+        return $action;
+    }
+
+    private static function executeRoute(string $action)
+    {
         $action= explode('/', $action);
         $class= $action[0];
         $method= (isset($action[1]))? $action[1]: 'index';
 
-        Controller::execute($class, $method, $this->params);
+        Controller::execute($class, $method, self::$params);
 
     }
 
