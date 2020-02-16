@@ -47,4 +47,19 @@ class MessageModel extends Model
 
         return $this->get($message['uuid']);
     }
+
+    public function searchChannel(string $term) 
+    {
+        // $term= addslashes("!{$term}-!!");
+        $query= "select * from message where message like '!{$term}-!!%'";
+        $result= $this->execute($query);
+        
+        $return= [];
+        while ( $row= $result->fetchObject() )
+        {
+            $return[]= $row;
+        }
+
+        return $return;
+    }
 }

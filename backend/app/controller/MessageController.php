@@ -36,4 +36,13 @@ class MessageController extends Controller
         self::response(200, (array)$msg);
     }
 
+    public function getChannelMessages()
+    {
+        $term= self::_POST();
+        $model= new MessageModel();
+        $msgs= $model->searchChannel($term['term']);
+
+        self::response(200, (array)$msgs);
+    }
+
 }

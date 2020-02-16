@@ -16,3 +16,5 @@ $routes['get']['message/:id']        = 'MessageController/getMessage';
 $routes['get']['message/user/:id']   = 'MessageController/getUserMessages';
 $routes['post']['message']           = 'MessageController/sendNewMessage';
 
+//      channel messages
+$routes['post']['channel']           = 'MessageController/getChannelMessages';
