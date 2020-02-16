@@ -27,4 +27,15 @@ class UserController extends Controller
         
         self::response(200, (array)$user);
     }
+
+    public function auth()
+    {
+        $user= self::_POST();
+        $model= new UserModel();
+        $user= $model->login($user['email'], $user['password']);
+
+        $code= (empty($user->uuid))? 401: 200;
+
+        self::response($code, (array)$user);
+    }
 }

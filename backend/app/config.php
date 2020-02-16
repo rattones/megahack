@@ -9,6 +9,7 @@ $routes['get']['test']               = 'Test/twitter';
 //      user 
 $routes['get']['user/:id']           = 'UserController/getUser';
 $routes['post']['user']              = 'UserController/addNewUser';
+$routes['post']['user/auth']         = 'UserController/auth';
 
 //      message
 $routes['get']['message/:id']        = 'MessageController/getMessage';
