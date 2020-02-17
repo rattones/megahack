@@ -81,6 +81,7 @@ class Controller extends Request
         if (!empty($data)) {
             echo json_encode($data);
         }
+        // exiting application to avoid after controller response extra executions
         exit(0);
     }
 
