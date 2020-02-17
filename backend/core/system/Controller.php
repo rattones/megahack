@@ -70,13 +70,18 @@ class Controller extends Request
    
     public static function response(int $status, array $data= null)
     {
-        header("HTML/1.1 ".self::$status[$status], true, $status);
+        // for apache with .htaccess file
+        // if (!headers_sent()) {
+        //     http_response_code($status);
+        // }
+        header("HTML/1.1 ".self::$status[$status], false, $status);
+        header('Cache-Control: no-cache, no-store, max-age=0, must-revalidate');
         header('Content-Type: application/json; charset=UTF-8');
         header("Access-Control-Allow-Origin: localhost:*");
         if (!empty($data)) {
             echo json_encode($data);
-
         }
+        exit(0);
     }
 
     public static function execute(string $class, string $method, array $params)

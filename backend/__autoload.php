@@ -2,7 +2,7 @@
 // echo '<pre>';
 
 // fixing autoload register
-spl_autoload_register("myAutolado");
+spl_autoload_register("myAutoload");
 
 function myAutoload ($class)
 {

@@ -20,6 +20,10 @@ class Request
     {
         if ( $_SERVER['HTTP_CONTENT_TYPE'] == 'application/json' ) {
             $_POST= json_decode(file_get_contents('php://input'), true);
+        } 
+
+        if (empty($_POST)) {
+            Controller::response(204, $_POST);
         }
 
         if ( !is_null($id) ) {
