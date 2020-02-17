@@ -9,7 +9,7 @@ class ApiAuth
     static private $timestamp= null;
     static private $passToken= null;
 
-    public function auth() : bool
+    public static function auth() : bool
     {
         return true; # testing in browser
         try {

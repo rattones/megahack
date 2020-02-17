@@ -1,6 +1,10 @@
 <?php
 // echo '<pre>';
-function __autoload ($class)
+
+// fixing autoload register
+spl_autoload_register("myAutolado");
+
+function myAutoload ($class)
 {
     // echo __FILE__.'<br>';
     $class= str_replace('\\', '/', $class);
