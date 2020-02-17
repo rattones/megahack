@@ -22,6 +22,7 @@ function myAutoload ($class)
     }
 }
 
+// debug 
 function debug($data) 
 {
     echo '<pre>';
