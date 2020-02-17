@@ -1,5 +1,0 @@
----
-deployment:
-  tasks:
-    - export DEPLOYPATH=/home/mratton/public_html/megahack
-    - /bin/cp -R background $DEPLOYPATH
