@@ -5,9 +5,3 @@
 executado pelo servidor interno do PHP 
 > php -S localhost:8090
 
-### endpoints
-#### user
-[GET] > /user/:id
-returna os dados do usuário 
-[POST] > /user
-salva um novo usuário 
