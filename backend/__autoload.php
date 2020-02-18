@@ -6,7 +6,6 @@ function myAutoload ($class)
 {
     $class= str_replace('\\', '/', $class);
     $classFile= "./{$class}.php";
-\debug($classFile);
     if (file_exists($classFile)) {
         require_once $classFile;
     } else {
