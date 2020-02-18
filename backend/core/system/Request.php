@@ -23,6 +23,9 @@ class Request
     {
         if ( empty($_POST) and $_SERVER['HTTP_CONTENT_TYPE'] == 'application/json' ) {
             $_POST= json_decode(file_get_contents('php://input'), true);
+            if (empty($_POST)) {
+                $_POST= json_decode(stream_get_contents('php://input'), true);
+            }
         } 
 
         if (empty($_POST)) {
