@@ -1,0 +1,25 @@
+@import '../../assets/variables';
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap');
+
+.inp {
+    background: rgba(0, 0, 0, 0.02);
+    border: 1px solid transparent;
+    height: 48px;
+    width: calc(100% - 66px);
+    margin: 6px 24px;
+    margin-bottom: 16px;
+    outline: none;
+    padding-left: 18px;
+    
+    &::placeholder {
+        text-transform: uppercase;
+    }
+    
+    &.wine {
+        border-bottom-color: $wine;
+    }
+
+    &.green {
+        border-bottom-color: $green;
+    }
+}

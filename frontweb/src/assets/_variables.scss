@@ -1,0 +1,17 @@
+$green: #6EB54C;
+$white: #ffffff;
+$wine: #81317A;
+$yellow: #ECC941;
+$dark-gray: #4F4F4F;
+
+$font-title: 'Rede Globo';
+$font-normal: 'Poppins';
+
+@font-face {
+    font-family: $font-title;
+    src: url(./fonts/rede-globo-bold.ttf);
+  }
+
+  h2 {
+      font-family: $font-title;
+  }
