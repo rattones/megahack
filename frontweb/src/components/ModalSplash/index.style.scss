@@ -1,0 +1,42 @@
+@import '../../assets/variables';
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap');
+
+.modal {
+    background: $white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-top: 3px solid transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: .5s all ease-in-out;
+    &.wine {
+        border-top-color: $wine;
+    }
+
+    &.closed {
+        bottom: -800px;
+        display: none;
+    }
+
+    &.green {
+        border-top-color: $green;
+    }
+
+    .title {
+        width: 100%;
+        text-align: left;
+        padding-left: 48px;
+
+        &.wine {
+            color: $wine;
+        }
+    
+        &.green {
+            color: $green;
+        }
+    }
+}

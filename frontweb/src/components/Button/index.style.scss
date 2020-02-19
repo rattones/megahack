@@ -1,0 +1,36 @@
+@import '../../assets/variables';
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap');
+
+.btn {
+    border: 2px solid transparent;
+    box-sizing: border-box;
+    border-radius: 24px;
+    height: 48px;
+    width: 170px;
+    background: transparent;
+    outline: none;
+    font-family: $font-normal;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: $white;
+
+    &.default {
+        background: #fff;
+        color: $green;
+    }
+
+    &.outline {
+        border-color: $white;
+        
+    }
+
+    &.wine {
+        background: $wine;
+    }
+
+    &.green {
+        background: $green;
+    }
+}
