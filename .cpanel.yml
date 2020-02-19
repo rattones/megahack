@@ -3,5 +3,6 @@ deployment:
   tasks:
     - export BACKENDPATH=/home/mratton/public_html/megahack
     - /bin/cp -R backend/* $BACKENDPATH
+  tasks:
     - export FRONTENDPATH=/home/mratton/public_html/megahack/site
     - /bin/cp -R frontend/* $FRONTENDPATH

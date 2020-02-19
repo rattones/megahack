@@ -1,0 +1,15 @@
+.bkGlobo {
+    background: linear-gradient(203.34deg, #2AA7BC 0%, #6EB54C 49.49%, #E7DB3A 100.02%);
+}
+
+.white {
+    color: #fff;
+}
+
+.black option {
+    color: #000;
+}
+
+.contend {
+    margin: 20px;
+}
